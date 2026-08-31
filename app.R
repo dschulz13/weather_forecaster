@@ -297,8 +297,7 @@ ui <- page_sidebar(
       textInput("city", "City:", value = "", placeholder = "Enter a city name here..."),
       textInput("country", "Country:", value = "", placeholder = "Enter a country name here..."),
       uiOutput("USAstateUI"),
-      actionButton("dbutton", "Search", icon = icon("magnifying-glass")),
-      bookmarkButton()
+      actionButton("dbutton", "Search", icon = icon("magnifying-glass"))
     ), width = "22%"
   ),
   layout_columns(
@@ -533,7 +532,5 @@ server <- function(input, output, session) {
   })  
 }
 
-# Enable bookmarks
-enableBookmarking(store = "url")
 # Run the application 
 shinyApp(ui = ui, server = server)
