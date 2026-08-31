@@ -346,7 +346,7 @@ ui <- page_sidebar(
     ),
     card(
         padding = "0rem",
-        max_height = "200px",
+        max_height = "500px",
     navset_card_tab(
       nav_panel(
         "Temperature",
