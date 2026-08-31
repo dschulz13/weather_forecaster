@@ -14,7 +14,7 @@ ggplot2::theme_set(ggplot2::theme_minimal())
 thematic_shiny()
 
 # Get global API_KEY variable
-api_key <- API_KEY
+api_key <- Sys.getenv("API_KEY")
 
 iso_code_df <- structure(list(country_name = c("Afghanistan", "Albania", "Algeria", 
 "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", 
