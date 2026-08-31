@@ -161,7 +161,8 @@ obtain_current_weather <- function(base_url = "https://api.openweathermap.org/da
     cloud_lvl = out$clouds$all,
     sunrise = out$sys$sunrise,
     sunset = out$sys$sunset,
-    timezone = out$timezone   # offset from UTC in seconds
+    timezone = out$timezone,   # offset from UTC in seconds
+    city_name = out$name
   )
   },
   error = function(e1) {
