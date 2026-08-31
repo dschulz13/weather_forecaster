@@ -409,7 +409,13 @@ server <- function(input, output, session) {
       showNotification("Could not find the location. Did you spell everything correctly in English?", duration = 5, type = "error")
       NULL
     })
-    if (!is.null(new_data)) {
+
+    if (new_data$current_weather$city_name != isolate(input$city)) {
+      showNotification("Could not find the location. Did you spell everything correctly in English?", duration = 5, type = "error")
+      req(new_data$current_weather$city_name == isolate(input$city))
+    }
+    
+    if (!is.null(new_data) && new_data$current_weather$city_name == isolate(input$city)) {
       dataset(new_data)
     }
     
